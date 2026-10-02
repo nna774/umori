@@ -10,11 +10,19 @@ Globals:
     MemorySize: 512
 
 Resources:
-  UmoriFunction:
+  # 論理IDを変えると関数とAPIが作り直され、umori-notifier が叩いている URL が変わる。
+  HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       CodeUri: umori/
       Handler: app.lambda_handler
-      Runtime: ruby3.3
+      Runtime: ruby3.4
+      Timeout: 10
       Architectures:
-        - x86_64
+        - arm64
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
