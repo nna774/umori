@@ -14,11 +14,14 @@ GEM
     nokogiri (1.18.0)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    nokogiri (1.18.0-aarch64-linux-gnu)
+      racc (~> 1.4)
     nokogiri (1.18.0-arm64-darwin)
       racc (~> 1.4)
     racc (1.8.1)
 
 PLATFORMS
+  aarch64-linux-gnu
   arm64-darwin-24
   ruby
 
